@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<head>
+  		<script type='text/javascript' src='script.js'>
+
+        var value;
+        function changeVal(choice) {
+          if (choice == 'val1') {
+          value = 'Sexual Harassment'
+          } 
+          else if (choice == 'val2'){
+          value ='Sexual Assault'
+          }
+          else if (choice == 'val3'){
+          value ='Stressful'
+          }
+          else if (choice == 'val4'){
+          value ='Domestic Violence'
+          }
+          else if (choice == 'val5'){
+          value ='Network Violence'
+          }
+          else if (choice == 'val6'){
+          value ='Hurt Feelings'
+          }
+          else if (choice == 'val7'){
+          value ='School Bullying'
+          }
+          else if (choice == 'val8'){
+          value ='Empty Nester'
+          }
+          
+          
+}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width">
+  	<style>
+      body,html{
+        height: 100%;
+      }
+      body{
+        background-image: url("https://cdn.glitch.com/f81ffc2e-1db8-4e3a-9c39-d0426fad8e41%2Fpurple_.jpg?v=1628335209346");
+        background-size:100% auto;
+        position: absolute;
+        background-repeat: no-repeat;
+        overflow-x:hidden;
+      }
+      label{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+      }
+      legend{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+      }
+        form {
+        position: relative;
+        left: 50%;
+        top: 50px;
+      }
+      fieldset{
+        border:none;
+      }
+     .tags {
+        position: absolute;
+        left: 410px;
+        top: 530px;
+      }
+      
+  	</style>
+	</head>
+	<body>
+    <form>
+  <div class="enterName">
+    <label for="name" >&nbsp&nbsp&nbsp1. Please enter your nickname: </label><br><br>
+    <input type="name" id="inputName" style="height:30px;width:400px;">
+  </div>
+
+      <br><br>
+   <label for="age">&nbsp&nbsp&nbsp2. Please choose your age: </label>
+      <br><br>
+    <select name="ages" id="ages" style="height:30px;width:400px;">
+      <option>-</option>
+      <option value="below13">Below 13</option>
+      <option value="13-18">13-18</option>
+      <option value="19-25">19-25</option>
+      <option value="26-40">26-40</option>
+      <option value="above40">Above 40</option>
+      </select>
+
+<br><br><br>
+    <form>
+      <fieldset>
+        <legend>3. Please choose your gender:</legend>
+  <div>
+      <input name="gender" value="female" id="girl" type="radio">
+    <label value="radio">Female</label><br>
+  </div>
+  <div>
+    <input name="gender" value="male" id="boy" type="radio">
+    <label value="radio">Male</label><br>
+  </div>
+  <div>
+      <input name="gender" value="non-binary" id="neither" type="radio">
+    <label value="radio">Non-binary</label><br><br>
+  </div>
+
+  </fieldset>
+
+      
+            <fieldset>
+        <legend>4. Please indicate your preference for the volunteer’s gender:</legend><br>
+  <div>
+     <input name="gender" value="female" id="girl" type="radio">
+    <label value="radio">Female</label><br>
+  </div>
+  <div>
+    <input name="gender" value="male" id="boy" type="radio">
+    <label value="radio">Male</label><br>
+  </div>
+  <div>
+    <input name="gender" value="non-binary" id="neither" type="radio">
+    <label value="radio">Non-binary</label><br>
+  </div>
+    <div>
+     <input name="gender" value="no-preference" id="no-preference" type="radio">
+        <label value="radio">No Preference</label><br><br>
+  </div>
+  
+  </fieldset><br><br>
+      
+      <label for="tag">&nbsp&nbsp&nbsp5. Please choose a tag that describes you best at this moment: </label>
+</form>
+    <div class="tags">
+      <img src="https://cdn.glitch.com/f81ffc2e-1db8-4e3a-9c39-d0426fad8e41%2FGroup%2012%20(1).svg?v=1628344830184" height="600px" width="500px" usemap="#multilinks">
+      <map name="multilinks">
+    <area target="1" alt="1*" coords="37,1,307,97" shape="rect" onclick="changeVal('val1')">
+    <area target="2" alt="2*" coords="698,97,453,0" shape="rect" onclick="changeVal('val2')">
+    <area target="3" alt="3*" coords="880,4,1077,101" shape="rect" onclick="changeVal('val3')">
+    <area target="4" alt="4*" coords="36,179,394,270" shape="rect" onclick="changeVal('val4')">
+    <area target="5" alt="5*" coords="474,176,831,268" shape="rect" onclick="changeVal('val5')">
+    <area target="6" alt="6*" coords="919,177,1189,264" shape="rect" onclick="changeVal('val6')">
+    <area target="7" alt="7*" coords="38,361,358,449" shape="rect" onclick="changeVal('val7')">
+    <area target="8" alt="8*" coords="736,448,460,361" shape="rect" onclick="changeVal('val8')">
+      </map>
+    </div>
+  </body>
+{% endblock %}

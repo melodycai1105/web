@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<head>
+  		<script type='text/javascript' src='script.js'>
+
+
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width">
+  	<style>
+      body,html{
+        height: 100%;
+      }
+      body{
+        background-image: url("https://cdn.glitch.com/f81ffc2e-1db8-4e3a-9c39-d0426fad8e41%2Fapply%20to%20be%20a%20volunteer.png?v=1628341646739");
+        background-size:cover;
+        position: absolute;
+        background-repeat: no-repeat;
+        overflow-x:hidden;
+      }
+      label{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+      }
+      select{
+        font-family: Roboto;
+      }
+      legend{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+      }
+      form{
+        position:relative;
+        left:50%;
+        top:150px;
+      }
+      fieldset{
+        border:none;
+      }
+      h2{
+        font-family: Roboto;
+        font-weight: bold;
+        position: absolute;
+        left: 100px;
+        font-size: 30px;
+        top: 30px;
+      }
+      h4{
+        font-family: Roboto;
+        font-weight: bold;
+        position: absolute;
+        left: 110px;
+        top: 80px;
+      }
+      textarea{
+        height: 300px;
+        width: 600px;
+      }
+      p{
+        font-family: Roboto;
+        font-size: 16px;
+        position: relative;
+        left: 280px;
+        top: 130px;
+      }
+      .file{
+        position: relative;
+        left: 280px;
+        top: 130px;
+      }
+
+  	</style>
+	</head>
+	<body>
+    <br><br>
+    <h3>Please fill out the form below for us to get to know you more</h3>
+
+    <form>
+    <label for="name" >&nbsp&nbsp&nbsp*1. Please enter your name: </label>
+      <br><br>
+    <input type="name" id="inputName" style="height:30px;width:400px;">
+
+    <br><br>
+
+     <label for="nickname" >&nbsp&nbsp&nbsp 2. Please enter your nickname (only for chat): </label>
+      <br><br>
+    <input type="nickname" id="inputNickName" style="height:30px;width:400px;">
+
+      <br><br>
+
+    <label for="age">&nbsp&nbsp&nbsp*3. Please choose your age: </label>
+      <br><br>
+    <select name="ages" id="ages" style="left:200px; height: 30px; width: 100px;">
+      <option>-</option>
+      <option value="below13">Below 13</option>
+      <option value="13-18">13-18</option>
+      <option value="19-25">19-25</option>
+      <option value="26-40">26-40</option>
+      <option value="above40">Above 40</option>
+      </select>
+
+
+    <br><br>
+
+      <fieldset>
+        <legend>*4. Please choose your gender:</legend>
+
+     <input name="gender" value="female" id="girl" type="radio">
+    <label value="radio">Female</label><br>
+
+    <br>
+
+    <input name="gender" value="male" id="boy" type="radio">
+    <label value="radio">Male</label><br>
+
+    <br>
+
+    <input name="gender" value="non-binary" id="neither" type="radio">
+    <label value="radio">Non-binary</label><br><br>
+
+
+  </fieldset>
+
+    <label for="specialty">&nbsp&nbsp&nbsp*5. Please indicate your specialty in help with psychological problems: </label>
+          <br><br>
+    <input type="specialty" id="inputSpe" style="height:30px;width:600px;">
+
+       <br><br>
+
+      <label for="experience">&nbsp&nbsp&nbsp 6. Please introduce your past related experience:  </label>
+          <br><br>
+          <textarea></textarea>
+
+</form>
+      <br><br>
+
+      <p for="upload">Please upload your therapist certificate / related work proof. </p>
+      <div class="file">
+        <input type="file"><br><br>
+    </div>
+
+    <p>
+    <a href="{{ url_for('personalpage') }}">{{ form.submit() }}</a>
+
+    <br><br><br><br>
+    </p>
+
+
+  </body>
+{% endblock %}
